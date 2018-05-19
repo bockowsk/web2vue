@@ -6,8 +6,8 @@
         <div v-else-if="email.length < 15">Twój adres e-mail jest w sam raz.</div>
         <div v-else>Twój adres e-mail jest stanowczo za długi.</div>
         <p>Witaj w systemie do zapisow na zajeciac</p>
-        <p v-if="login == 0"> Zaloguj sie e-maile'em: <input type="login" v-model="wartosc"/><button @click="logujSie()">Wchodze</button></p>
-        <p v-if="login == 1"> Zalogowany!<button @click="wylogujSie()">Wychodze</button></p>
+        <p v-if="login == 0"> Zaloguj sie e-maile'em: <input type="login" v-model="wartosc"/><button @click="myToogle()">Wchodze</button></p>
+        <p v-if="login == 1"> Zalogowany!<button @click="myToogle()">Wychodze</button></p>
     </div>
     
 </template>
@@ -31,7 +31,11 @@ export default {
     },
     wylogujSie() {
       this.login = 0;
+    },
+    myToogle() {
+      this.login=!this.login
     }
+    
   }
 };
 </script>
